@@ -2,7 +2,7 @@ import socket
 from Crypto.Cipher import AES
 
 def Main():
-    host = "172.20.10.2"
+    host = "localhost"
     port = 5000
     address = (host, port)
 
@@ -23,7 +23,7 @@ def Main():
     encriptado = cifrado.encrypt(datos)
 
     # Enviamos los datos de la imagen
-    cliente.send('imagen_nueva.jpg'.encode())
+    cliente.send('imagen_nueva.jpg'.encode('UTF-8'))
     cliente.sendall(encriptado)
     cliente.send(b'<FIN>')
 

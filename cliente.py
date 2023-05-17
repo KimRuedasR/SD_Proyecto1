@@ -23,7 +23,7 @@ def Main():
     encriptado = cifrado.encrypt(datos)
 
     # Enviamos los datos de la imagen
-    cliente.send('imagen_nueva.jpg'.encode('UTF-8'))
+    cliente.send(b'imagen_nueva.jpg')
     cliente.sendall(encriptado)
     cliente.send(b'<FIN>')
 

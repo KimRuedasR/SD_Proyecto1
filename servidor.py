@@ -23,10 +23,9 @@ def Main():
     # Acepta la conexion y socket de un cliente
     cliente, cliente_add = servidor.accept()
 
-    archivo_nombre = cliente.recv(buff).decode('utf-8')
+    archivo_nombre = "imagen_nueva.jpg"
 
-    # Abrimos la imagen para escritura y definimos
-    # cuando se acaba de transmitir el tamaño de la imagen
+    # Abrimos la imagen para escritura y definimos cuando se acaba de transmitir el tamaño de la imagen
     archivo = open(archivo_nombre, 'wb')
     terminado = False
     archivo_bytes = b''

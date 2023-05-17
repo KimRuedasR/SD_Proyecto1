@@ -23,7 +23,7 @@ def Main():
     # Acepta la conexion y socket de un cliente
     cliente, cliente_add = servidor.accept()
 
-    archivo_nombre = cliente.recv(buff)
+    archivo_nombre = cliente.recv(buff).decode('utf-8')
 
     # Abrimos la imagen para escritura y definimos
     # cuando se acaba de transmitir el tamaño de la imagen
@@ -46,7 +46,7 @@ def Main():
     print('-----------------------')
     print('-- Nombre del archivo:', archivo_nombre,' --')
 
-    # Cerramos el archivo y los sockets
+    # Cerramos el archivo y sockets
     archivo.close()
     cliente.close()
     servidor.close()
